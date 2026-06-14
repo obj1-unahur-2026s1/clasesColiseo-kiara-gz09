@@ -1,4 +1,6 @@
 import armas.*
+import coliseo.Grupo
+
 
 class Gladiador {
     var property vida = 100
@@ -7,13 +9,16 @@ class Gladiador {
     method poderAtaque()
     method defensa() 
     method atacar(enemigo){
-        enemigo.recibirDaño(self.poderAtaque() - enemigo.defensa())
+        if (self.puedeCombatir())
+            enemigo.recibirDaño(self.poderAtaque() - enemigo.defensa())
     }
-    method recibirDaño(daño) {vida = vida - daño}
+    method recibirDaño(daño) {vida = (vida - daño).max(0)}
     method pelearCon(enemigo) {
       self.atacar(enemigo)
       enemigo.atacar(self)
     }
+    method puedeCombatir() = vida > 0 
+    method crearGrupoCon(otroGladiador)
 }
 
 class Mirmillones inherits Gladiador{
@@ -24,6 +29,9 @@ class Mirmillones inherits Gladiador{
     override method fuerza() = fuerza
     override method poderAtaque() = arma.valorAtaque() + self.fuerza()
     override method defensa() = armadura.puntos(self) + self.destreza()
+    override method crearGrupoCon(otroGladiador) {
+        return new Grupo(nombre = "mirmillolandia", miembros = [self, otroGladiador])
+    }
 }
 
 class Dimachaerus inherits Gladiador{
@@ -37,5 +45,9 @@ class Dimachaerus inherits Gladiador{
     override method atacar(enemigo){
         super(enemigo)
         destreza +=1
+    }
+    override method crearGrupoCon(otroGladiador) {
+        const aux = self.poderAtaque() + otroGladiador.poderAtaque()
+        return new Grupo(nombre = "D-" ++ aux, miembros = [self, otroGladiador])
     }
 }

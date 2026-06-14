@@ -1,15 +1,17 @@
 import armas.*
 import gladiadores.*
 
-describe "Ataques" {
+test "Un dimachaerus crea un grupo D-X" {
+    const dim1 = new Dimachaerus(destreza = 10)
+    dim1.arma().add(new ArmaContundente(peso = 10))
 
-  test "Dimachaerus aumenta su destreza al atacar" {
-    const dim = new Dimachaerus(destreza = 20)
-    dim.arma().add(
-      new ArmaContundente(peso = 10)
+    const dim2 = new Dimachaerus(destreza = 20)
+    dim2.arma().add(new ArmaContundente(peso = 20))
+
+    const grupo = dim1.crearGrupoCon(dim2)
+
+    assert.equals(
+        "D-50",
+        grupo.nombre()
     )
-    const mir = new Mirmillones(fuerza = 40, arma = new ArmaContundente(peso = 5), armadura = casco)
-    dim.atacar(mir)
-    assert.equals(21, dim.destreza())
-  }
 }

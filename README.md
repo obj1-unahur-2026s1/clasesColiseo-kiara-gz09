@@ -34,10 +34,10 @@ Se pide implementar la solución que considere necesaria para hacer que un gladi
 Cuando un gladiador se pelea con otro lo que hace es atacarlo. Luego de sufrir los efectos correspondientes, el gladiador atacado realiza un contraataque, mediante su propia forma de atacar. 
 
 ### Grupos
-Permitir que en el coliseo haya varios grupos de gladiadores que puedan combatir contra otros grupos. De los grupos se conoce también un nombre que los representa y se registra la cantidad de peleas en las que participó. Un grupo es capaz de manejar a sus miembros (agregar o quitar gladiadores).
-Los combates son a tres rounds, en cada round cada grupo elige a su campeón para que pelee con el campeón adversario. El campeón debe ser el más fuerte del grupo que pueda combatir (si aún cuenta con puntos de vida disponibles)
-Un gladiador puede crear un grupo juntándose con otro gladiador y definiendo el nombre del grupo. Si es un mirmillon el que lo arma, le pone por nombre "mirmillolandia". Si es un dimachaerus, el nombre es por ejemplo "D-12" donde 12 es la suma de su poder de ataque y el de su colega del grupo.
+Permitir que en el coliseo haya varios grupos de gladiadores que puedan combatir contra otros grupos. De los grupos se conoce también un nombre que los representa y se registra la cantidad de peleas en las que participó. Un grupo es capaz de manejar a sus miembros (agregar o quitar gladiadores). 
+Los combates son a tres rounds, en cada round cada grupo elige a su campeón para que pelee con el campeón adversario. El campeón debe ser el más fuerte del grupo que pueda combatir (si aún cuenta con puntos de vida disponibles) 
+Un gladiador puede crear un grupo juntándose con otro gladiador y definiendo el nombre del grupo. Si es un mirmillon el que lo arma, le pone por nombre "mirmillolandia". Si es un dimachaerus, el nombre es por ejemplo "D-12" donde 12 es la suma de su poder de ataque y el de su colega del grupo. 
 
 
-### El Coliseo
-El coliseo puede organizar combates entre grupos de gladiadores, aunque a veces tambien hace combatir a un grupo contra un gladiador suelto. Los dueños del coliseo no son unos tiranos así que también curan a los gladiadores, ya sea en grupos o solos.
+### El Coliseo 
+El coliseo puede organizar combates entre grupos de  gladiadores, aunque a veces tambien hace combatir a un grupo contra un gladiador suelto. Los dueños del coliseo no son unos tiranos así que también curan a los gladiadores, ya sea en grupos o solos. 
