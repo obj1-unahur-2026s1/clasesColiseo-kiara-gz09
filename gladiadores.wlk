@@ -19,6 +19,9 @@ class Gladiador {
     }
     method puedeCombatir() = vida > 0 
     method crearGrupoCon(otroGladiador)
+    method curar() {
+      vida = 100
+    }
 }
 
 class Mirmillones inherits Gladiador{

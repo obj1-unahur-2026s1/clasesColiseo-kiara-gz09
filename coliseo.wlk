@@ -3,7 +3,7 @@ import gladiadores.*
 //GRUPOS
 class Grupo {
     const property nombre
-    const miembros = []
+    const property miembros = []
     var cantPeleas = 0
 
     method agregarMiembro(gladiador) {
@@ -29,5 +29,25 @@ class Grupo {
     method registrarPelea() {
       cantPeleas += 1
     }
+    method curar() {
+    miembros.forEach { m => m.curar() }
+    }
 }
 
+//COLISEO
+object coliseo{
+    const combatientes = []
+    method ingresar(grupoOGladiador) {
+      combatientes.add(grupoOGladiador)
+    }
+    method combatePorGrupos(grupo1, grupo2) {
+        grupo1.combatirGrupo(grupo2)
+    }
+    method combate1vsGrupo(unGladiador, unGrupo) {
+        const grupoSolo = new Grupo(nombre = "SoySolito", miembros = [unGladiador])
+        unGrupo.combatirGrupo(grupoSolo)
+    }
+    method curarGladiadores() {
+      combatientes.forEach{c => c.curar()}
+    }
+}
