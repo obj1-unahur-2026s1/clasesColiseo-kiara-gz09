@@ -10,16 +10,16 @@ class ArmaFilo inherits Arma{
   
 }
 
-class Contundente inherits Arma{
+class ArmaContundente inherits Arma{
   const property peso
   override method valorAtaque() = peso 
 }
 
 //ARMADURA
 object casco {
-  method puntos(luchador) = 10 
+  method puntos(gladiador) = 10 
 }
 
 object escudo{
-  method puntos(luchador) = 5 + luchador.destreza()*0.10 
+  method puntos(gladiador) = 5 + gladiador.destreza()*0.10 
 }

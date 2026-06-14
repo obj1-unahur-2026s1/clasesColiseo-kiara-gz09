@@ -1,0 +1,15 @@
+import armas.*
+import gladiadores.*
+
+describe "Ataques" {
+
+  test "Dimachaerus aumenta su destreza al atacar" {
+    const dim = new Dimachaerus(destreza = 20)
+    dim.arma().add(
+      new ArmaContundente(peso = 10)
+    )
+    const mir = new Mirmillones(fuerza = 40, arma = new ArmaContundente(peso = 5), armadura = casco)
+    dim.atacar(mir)
+    assert.equals(21, dim.destreza())
+  }
+}
